@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Picture Taker
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <!-- note Ionic 3 syntax here -->
+  <button ion-button full (click)="takePic()">Take Pic</button>
+<img [src]='image'/>
+<h2>Gallery</h2>
+<ion-item *ngFor='let image of gallery'>
+  <div> {{image.time| date:'long'}}</div>
+  <img [src]="image.src" />
+
+</ion-item>
+<!-- <div *ngIf="this.timestamp">
+  {{timestamp| date : 'long'}}
+</div> -->
+</ion-content>
